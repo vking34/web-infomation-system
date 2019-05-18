@@ -1,0 +1,40 @@
+version: '3.5'
+services:
+  db:
+    image: mysql:5.7
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_USER: vking34
+      MYSQL_PASSWORD: 123456
+      MYSQL_ALLOW_EMPTY_PASSWORD: "no"
+      MYSQL_DATABASE: two_football
+    restart: unless-stopped
+
+    expose:
+      - "3306"
+    volumes:
+      - db:/var/lib/mysql
+    networks:
+      - two-football
+
+  backend:
+    build:
+      context: ./two_football
+      dockerfile: Dockerfile
+      args:
+        ENV: development
+
+    depends_on:
+      - db
+    ports:
+      - "80:80"
+    
+    networks:
+      - two-football
+
+volumes:
+  db:
+networks: 
+  two-football:
+    driver: overlay
