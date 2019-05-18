@@ -5,7 +5,7 @@
 # DB_PASSWORD = 'vking34'
 
 
-DB_HOST = '2f_db'
+DB_HOST = '2f_db.1.rklfo8ag90inapd238ayd2boj'
 DB_PORT = '3306'
 DB_NAME = 'two_football'
 DB_USERNAME = 'vking34'

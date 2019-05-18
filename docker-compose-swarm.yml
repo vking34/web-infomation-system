@@ -17,6 +17,7 @@ services:
       - two-football
 
   backend:
+    container_name: backend
     image: vking34/two-football-backend:second
     build:
       context: ./two_football
@@ -30,6 +31,20 @@ services:
       - "80:80"
     
     networks:
+      - two-football
+
+  frontend:
+    container_name: frontend
+    image: vking34/two-football-frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        REACT_APP_ENV: ${ENV}
+
+    ports:
+      - "3000:3000"
+    networks: 
       - two-football
 
 volumes:

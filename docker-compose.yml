@@ -28,5 +28,15 @@ services:
     ports:
       - "80:80"
 
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        REACT_APP_ENV: ${ENV}
+
+    ports:
+      - "3000:3000"
+
 volumes:
   db:
