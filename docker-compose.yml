@@ -15,8 +15,6 @@ services:
       - "3306"
     volumes:
       - db:/var/lib/mysql
-    networks:
-      - two-football
 
   backend:
     build:
@@ -29,12 +27,6 @@ services:
       - db
     ports:
       - "80:80"
-    
-    networks:
-      - two-football
 
 volumes:
   db:
-networks: 
-  two-football:
-    driver: overlay

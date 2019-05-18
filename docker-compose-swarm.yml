@@ -11,12 +11,13 @@ services:
       MYSQL_DATABASE: two_football
     restart: unless-stopped
 
-    expose:
-      - "3306"
     volumes:
       - db:/var/lib/mysql
+    networks:
+      - two-football
 
   backend:
+    image: vking34/two-football-backend:second
     build:
       context: ./two_football
       dockerfile: Dockerfile
@@ -27,6 +28,12 @@ services:
       - db
     ports:
       - "80:80"
+    
+    networks:
+      - two-football
 
 volumes:
   db:
+networks: 
+  two-football:
+    driver: overlay

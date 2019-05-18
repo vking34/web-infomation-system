@@ -5,7 +5,7 @@
 # DB_PASSWORD = 'vking34'
 
 
-DB_HOST = 'gotit_db_1_9640f0a30b3e'
+DB_HOST = '2f_db'
 DB_PORT = '3306'
 DB_NAME = 'two_football'
 DB_USERNAME = 'vking34'
