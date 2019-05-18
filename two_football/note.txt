@@ -1,0 +1,24 @@
+# install libs
+pip install -r requirements.txt
+
+# queries in SQLAlchemy
+http://www.leeladharan.com/sqlalchemy-query-with-or-and-like-common-filters
+
+# bcrypt password
+https://www.rithmschool.com/courses/intermediate-flask/hashing-passwords-flask
+
+# import dump file to database
+$ mysql -h sql12.freesqldatabase.com -u sql12287474 -p sql12287474 < dump.sql
+mysql -h bdk0y6kcbyxcowpuavix-mysql.services.clever-cloud.com -u ujkihaljzgfj78of -p bdk0y6kcbyxcowpuavix < dump.sql
+
+mysql -h 35.240.167.204 -u root -p two_football < dump.sql
+
+# threading
+https://stackoverflow.com/questions/14384739/how-can-i-add-a-background-thread-to-flask
+
+# run gunicorn
+gunicorn --bind 0.0.0.0:80 "run:create_app()"
+
+# Rebuild image
+docker-compose up -d --no-deps --build backend
+
